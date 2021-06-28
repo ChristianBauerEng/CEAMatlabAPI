@@ -16,8 +16,10 @@ function inp = rocket(obj)
     i = 1;
     inp{i,1} = sprintf('prob case=wrapper ro equilibrium');
     i = i + 1;
-    inp{i,1} = sprintf('');
-    i = i + 1;
+    inp{i,1} = sprintf('    rocket  fac   ac/at=%g  tcest,k=3800', obj.parent.AcAt);
+%     i = i + 1;
+%     inp{i,1} = sprintf('ac/at %g', obj.parent.AcAt);
+    i = i+1;
     inp{i,1} = sprintf(' ! iac problem');
     i = i + 1;
     inp{i,1} = sprintf('o/f %g',obj.parent.OF);   %oxidiser to fuel ratio

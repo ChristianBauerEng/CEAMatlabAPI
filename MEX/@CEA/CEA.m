@@ -39,6 +39,7 @@ classdef CEA < handle
         pressure; % Input pressure
         presUnit = 'psia'; % Pressure unit
         supar; % Supersonic area ratio
+        AcAt; % Contraction ratio
         PcPe; % Pc/Pe
         Debug = false; % to have class debug outputs
 
