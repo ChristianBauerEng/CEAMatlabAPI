@@ -14,6 +14,10 @@ function data = run(obj)
     if obj.Debug
         c2 = clock;
     end
+    
+    % Get directory, in which this .m file resided...
+    [myDir, ~, ~] = fileparts(mfilename('fullpath'));
+    
     try
         thermoFind = which('thermo.lib');
         [thermoPath,~,~] = fileparts(thermoFind);
@@ -40,6 +44,9 @@ function data = run(obj)
     else
         error('Platform not supported')
     end  
+    
+    thermoPath = myDir;
+    
     data = cea2(obj.ioinp,inputFile,thermoPath);
     if obj.Debug
         c2 = clock - c2;
